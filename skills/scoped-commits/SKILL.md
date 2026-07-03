@@ -1,6 +1,6 @@
 ---
 name: scoped-commits
-description: Guide commit message writing using scope-first convention (anti-Conventional Commits). Use when writing or reviewing commit messages, setting up commit conventions, or asked about git commit style. Trigger on: "commit message", "git commit", "how to commit", "commit convention", "commit style".
+description: 'Guide commit message writing using scope-first convention (anti-Conventional Commits). Use when writing or reviewing commit messages, setting up commit conventions, or asked about git commit style. Trigger on: "commit message", "git commit", "how to commit", "commit convention", "commit style".'
 ---
 
 # scoped-commits
