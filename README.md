@@ -26,6 +26,12 @@ npx skills add /path/to/skills
 
 ## Skills
 
+| Skill | Description |
+| --- | --- |
+| [`init-docs`](#init-docs) | Scaffolds a progressive-disclosure documentation base for a software project (`docs/`, `AGENTS.md`). |
+| [`init-knowledge-directory`](#init-knowledge-directory) | Creates a fixed knowledge-workspace layout with `sources/`, `staging/`, `wiki/`, `scripts/`, and `AGENTS.md`. |
+| [`scoped-commits`](#scoped-commits) | Guides commit messages using a scope-first format instead of Conventional Commits. |
+
 ### `init-docs`
 
 Scaffolds a progressive-disclosure documentation base for a software project.
