@@ -1,4 +1,0 @@
-interface:
-  display_name: "Init Knowledge Directory"
-  short_description: "Initialize a knowledge directory workspace"
-  default_prompt: "Use $init-knowledge-directory to initialize the knowledge directory structure in the current directory."

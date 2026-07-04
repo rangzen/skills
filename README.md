@@ -29,8 +29,9 @@ npx skills add /path/to/skills
 | Skill | Description |
 | --- | --- |
 | [`init-docs`](#init-docs) | Scaffolds a progressive-disclosure documentation base for a software project (`docs/`, `AGENTS.md`). |
-| [`init-knowledge-directory`](#init-knowledge-directory) | Creates a fixed knowledge-workspace layout with `sources/`, `staging/`, `wiki/`, `scripts/`, and `AGENTS.md`. |
 | [`scoped-commits`](#scoped-commits) | Guides commit messages using a scope-first format instead of Conventional Commits. |
+
+> `init-knowledge-directory` was merged into the `kp-init` skill in [rangzen/knowledge-project-skills](https://github.com/rangzen/knowledge-project-skills).
 
 ### `init-docs`
 
@@ -45,22 +46,6 @@ Typical prompts:
 - `/init-docs`
 - `set up docs for this project`
 - `initialize the knowledge base for this repo`
-
-### `init-knowledge-directory`
-
-Creates a fixed knowledge-workspace layout with:
-- `sources/`
-- `staging/`
-- `wiki/`
-- `scripts/`
-- `AGENTS.md`
-
-Use it when you want a non-code knowledge directory with strict rules around
-raw sources, staging data, wiki content, and reusable scripts.
-
-Typical prompts:
-- `initialize a knowledge directory here`
-- `set up sources, staging, wiki, and scripts`
 
 ### `scoped-commits`
 
