@@ -1,8 +1,8 @@
 # Personal Skills
 
 This repository contains personal [Agent Skills](https://agentskills.io)
-bundles for Codex and other compatible agents. Each skill lives under
-`skills/<skill-name>/` and provides a `SKILL.md` entry point.
+compatible with any harness that supports the [spec](https://agentskills.io) (Claude Code, Pi, and others).
+Each skill lives under `skills/<skill-name>/` and provides a `SKILL.md` entry point.
 
 ## Installation
 
