@@ -67,6 +67,18 @@ Typical prompts:
 - `write a commit message for these changes`
 - `what commit style should we use?`
 
+## Context
+
+The `context/` directory contains personal context files that agents can load to understand who they are working with and how to act on behalf of Cédric.
+
+| File | Purpose |
+| --- | --- |
+| [`context/AGENTS.md`](context/AGENTS.md) | General agent instructions following the [agents.md](https://agents.md) standard. Loaded by compatible agents automatically. |
+| [`context/OPINIONS.md`](context/OPINIONS.md) | Cédric's engineering and product opinions. Agents read this when making technical decisions that benefit from his viewpoint. |
+| [`context/VOICES.md`](context/VOICES.md) | Cédric's writing voice profile. Agents read this when writing or posting on his behalf. |
+
+Run `scripts/link-context.sh` to symlink all context files into `~` and create `~/CLAUDE.md -> ~/AGENTS.md`.
+
 ## Usage
 
 These skills are trigger-based. After installation, invoke them by naming the
