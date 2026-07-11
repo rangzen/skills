@@ -67,6 +67,28 @@ Typical prompts:
 - `write a commit message for these changes`
 - `what commit style should we use?`
 
+## External Skills
+
+Skills from [anthropics/skills](https://github.com/anthropics/skills) worth installing:
+
+| Skill | Description |
+| --- | --- |
+| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Create, modify, and measure agent skills. |
+| [`pdf`](https://github.com/anthropics/skills/tree/main/skills/pdf) | Read, merge, split, fill, encrypt, and OCR PDF files. |
+| [`docx`](https://github.com/anthropics/skills/tree/main/skills/docx) | Create, read, and edit Word documents. |
+| [`xlsx`](https://github.com/anthropics/skills/tree/main/skills/xlsx) | Open, read, edit, and create spreadsheets (.xlsx, .csv, .tsv). |
+| [`pptx`](https://github.com/anthropics/skills/tree/main/skills/pptx) | Work with PowerPoint files as input or output. |
+
+Skills from [rangzen/knowledge-project-skills](https://github.com/rangzen/knowledge-project-skills):
+
+| Skill | Description |
+| --- | --- |
+| [`kp-init`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-init) | Scaffold a new knowledge project: directory structure, `.knowledge-project` config, and stub files. |
+| [`kp-source`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-source) | Add and track sources (PDF, URL, CSV, database) with ingestion dates and hashes. |
+| [`kp-staging`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-staging) | Run LLM extractors over ingested sources and write structured JSON to `staging/`. |
+| [`kp-query`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-query) | Query the knowledge base and save answers with provenance to `wiki/queries/`. |
+| [`kp-wiki`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-wiki) | Build the navigable wiki: entity pages, glossary, wikilinks, and typed entry points. |
+
 ## Context
 
 The `context/` directory contains personal context files that agents can load to understand who they are working with and how to act on behalf of Cédric.
