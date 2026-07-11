@@ -101,6 +101,8 @@ The `context/` directory contains personal context files that agents can load to
 
 Run `scripts/link-context.sh` to symlink all context files into `~` and create `~/CLAUDE.md -> ~/AGENTS.md`.
 
+Inspired by [Kun Chen](https://github.com/kunchenguid)'s approach to agent ergonomics and personal context design.
+
 ## Usage
 
 These skills are trigger-based. After installation, invoke them by naming the
