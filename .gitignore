@@ -1,0 +1,4 @@
+.env
+skills/youtube/db/
+__pycache__/
+*.pyc
