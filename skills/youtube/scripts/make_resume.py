@@ -203,7 +203,11 @@ def main(argv: list[str]) -> int:
     user_prompt = build_user_prompt(transcript, args.language)
 
     print(f"Generating resume for {label} using {model} ...")
-    resume = call_openrouter(api_key, model, SYSTEM_PROMPT, user_prompt)
+    try:
+        resume = call_openrouter(api_key, model, SYSTEM_PROMPT, user_prompt)
+    except (requests.RequestException, RuntimeError) as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
 
     timestamp = datetime.now().astimezone()
     frontmatter = build_frontmatter(video_id, model, args.language, timestamp)
