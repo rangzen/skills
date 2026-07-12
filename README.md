@@ -69,25 +69,37 @@ Typical prompts:
 
 ## External Skills
 
+Omit `--skill <name>` to open an interactive multi-select picker for the whole repo:
+
+```sh
+npx skills add anthropics/skills
+```
+
 Skills from [anthropics/skills](https://github.com/anthropics/skills) worth installing:
 
-| Skill | Description |
-| --- | --- |
-| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Create, modify, and measure agent skills. |
-| [`pdf`](https://github.com/anthropics/skills/tree/main/skills/pdf) | Read, merge, split, fill, encrypt, and OCR PDF files. |
-| [`docx`](https://github.com/anthropics/skills/tree/main/skills/docx) | Create, read, and edit Word documents. |
-| [`xlsx`](https://github.com/anthropics/skills/tree/main/skills/xlsx) | Open, read, edit, and create spreadsheets (.xlsx, .csv, .tsv). |
-| [`pptx`](https://github.com/anthropics/skills/tree/main/skills/pptx) | Work with PowerPoint files as input or output. |
+| Skill | Description | Install |
+| --- | --- | --- |
+| [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Create, modify, and measure agent skills. | `npx skills add anthropics/skills --skill skill-creator` |
+| [`pdf`](https://github.com/anthropics/skills/tree/main/skills/pdf) | Read, merge, split, fill, encrypt, and OCR PDF files. | `npx skills add anthropics/skills --skill pdf` |
+| [`docx`](https://github.com/anthropics/skills/tree/main/skills/docx) | Create, read, and edit Word documents. | `npx skills add anthropics/skills --skill docx` |
+| [`xlsx`](https://github.com/anthropics/skills/tree/main/skills/xlsx) | Open, read, edit, and create spreadsheets (.xlsx, .csv, .tsv). | `npx skills add anthropics/skills --skill xlsx` |
+| [`pptx`](https://github.com/anthropics/skills/tree/main/skills/pptx) | Work with PowerPoint files as input or output. | `npx skills add anthropics/skills --skill pptx` |
 
 Skills from [rangzen/knowledge-project-skills](https://github.com/rangzen/knowledge-project-skills):
 
-| Skill | Description |
-| --- | --- |
-| [`kp-init`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-init) | Scaffold a new knowledge project: directory structure, `.knowledge-project` config, and stub files. |
-| [`kp-source`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-source) | Add and track sources (PDF, URL, CSV, database) with ingestion dates and hashes. |
-| [`kp-staging`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-staging) | Run LLM extractors over ingested sources and write structured JSON to `staging/`. |
-| [`kp-query`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-query) | Query the knowledge base and save answers with provenance to `wiki/queries/`. |
-| [`kp-wiki`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-wiki) | Build the navigable wiki: entity pages, glossary, wikilinks, and typed entry points. |
+| Skill | Description | Install |
+| --- | --- | --- |
+| [`kp-init`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-init) | Scaffold a new knowledge project: directory structure, `.knowledge-project` config, and stub files. | `npx skills add rangzen/knowledge-project-skills --skill kp-init` |
+| [`kp-source`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-source) | Add and track sources (PDF, URL, CSV, database) with ingestion dates and hashes. | `npx skills add rangzen/knowledge-project-skills --skill kp-source` |
+| [`kp-staging`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-staging) | Run LLM extractors over ingested sources and write structured JSON to `staging/`. | `npx skills add rangzen/knowledge-project-skills --skill kp-staging` |
+| [`kp-query`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-query) | Query the knowledge base and save answers with provenance to `wiki/queries/`. | `npx skills add rangzen/knowledge-project-skills --skill kp-query` |
+| [`kp-wiki`](https://github.com/rangzen/knowledge-project-skills/tree/main/skills/kp-wiki) | Build the navigable wiki: entity pages, glossary, wikilinks, and typed entry points. | `npx skills add rangzen/knowledge-project-skills --skill kp-wiki` |
+
+Skills from [kunchenguid/lavish-axi](https://github.com/kunchenguid/lavish-axi) by [Kun Chen](https://github.com/kunchenguid):
+
+| Skill | Description | Install |
+| --- | --- | --- |
+| [`lavish`](https://github.com/kunchenguid/lavish-axi) | Turn complex or visual agent responses into rich, reviewable HTML artifacts the user can annotate and send feedback on. | `npx skills add kunchenguid/lavish-axi --skill lavish` |
 
 ## Context
 
