@@ -86,7 +86,12 @@ def main(argv: list[str]) -> int:
 
     url = argv[1]
     output_dir = Path(argv[2]) if len(argv) == 3 else Path.cwd() / "db"
-    video_id = extract_video_id(url)
+
+    try:
+        video_id = extract_video_id(url)
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
