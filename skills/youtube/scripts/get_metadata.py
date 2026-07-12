@@ -132,7 +132,9 @@ def main(argv: list[str]) -> int:
         out_dir.mkdir(exist_ok=True)
 
     out_file = out_dir / "metadata.json"
-    out_file.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_file.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     print(f"Title:    {title}")
     print(f"Channel:  {channel}")

@@ -114,7 +114,9 @@ def sanitize_for_filename(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-")
 
 
-def build_frontmatter(video_id: str, model: str, language: str, timestamp: datetime) -> str:
+def build_frontmatter(
+    video_id: str, model: str, language: str, timestamp: datetime
+) -> str:
     lines = [
         "---",
         f"video_id: {video_id}",
@@ -127,7 +129,9 @@ def build_frontmatter(video_id: str, model: str, language: str, timestamp: datet
     return "\n".join(lines)
 
 
-def call_openrouter(api_key: str, model: str, system_prompt: str, user_prompt: str) -> str:
+def call_openrouter(
+    api_key: str, model: str, system_prompt: str, user_prompt: str
+) -> str:
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -141,7 +145,9 @@ def call_openrouter(api_key: str, model: str, system_prompt: str, user_prompt: s
         ],
         "temperature": 0.3,
     }
-    response = requests.post(OPENROUTER_CHAT_URL, headers=headers, json=payload, timeout=120)
+    response = requests.post(
+        OPENROUTER_CHAT_URL, headers=headers, json=payload, timeout=120
+    )
     if response.status_code != 200:
         raise RuntimeError(
             f"OpenRouter request failed ({response.status_code}): {response.text}"
@@ -160,11 +166,13 @@ def main(argv: list[str]) -> int:
         help="path to a transcript directory, a bare video id, or a full YouTube URL",
     )
     parser.add_argument(
-        "--language", default=DEFAULT_LANGUAGE,
+        "--language",
+        default=DEFAULT_LANGUAGE,
         help=f"Language for the resume (default: {DEFAULT_LANGUAGE})",
     )
     parser.add_argument(
-        "--base-dir", default=None,
+        "--base-dir",
+        default=None,
         help="Directory to resolve bare video ids against (default: ./db)",
     )
     args = parser.parse_args(argv[1:])
@@ -179,7 +187,9 @@ def main(argv: list[str]) -> int:
     api_key = os.environ.get("OPENROUTER_API_KEY")
     model = os.environ.get("OPENROUTER_MODEL")
     if not api_key:
-        print("Error: OPENROUTER_API_KEY is not set. See .env.example.", file=sys.stderr)
+        print(
+            "Error: OPENROUTER_API_KEY is not set. See .env.example.", file=sys.stderr
+        )
         return 1
     if not model:
         print("Error: OPENROUTER_MODEL is not set. See .env.example.", file=sys.stderr)

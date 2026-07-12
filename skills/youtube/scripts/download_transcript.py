@@ -120,9 +120,12 @@ def main(argv: list[str]) -> int:
     raw_file = out_dir / "transcript.json"
     raw_file.write_text(
         json.dumps(
-            [{"text": s.text, "start": s.start, "duration": s.duration}
-             for s in transcript],
-            ensure_ascii=False, indent=2,
+            [
+                {"text": s.text, "start": s.start, "duration": s.duration}
+                for s in transcript
+            ],
+            ensure_ascii=False,
+            indent=2,
         ),
         encoding="utf-8",
     )
