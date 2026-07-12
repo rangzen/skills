@@ -30,6 +30,7 @@ npx skills add /path/to/skills
 | --- | --- |
 | [`init-docs`](#init-docs) | Scaffolds a progressive-disclosure documentation base for a software project (`docs/`, `AGENTS.md`). |
 | [`scoped-commits`](#scoped-commits) | Guides commit messages using a scope-first format instead of Conventional Commits. |
+| [`youtube`](#youtube) | Composable toolkit for fetching YouTube metadata, transcripts, and transcript-backed summaries. |
 
 > `init-knowledge-directory` was merged into the `kp-init` skill in [rangzen/knowledge-project-skills](https://github.com/rangzen/knowledge-project-skills).
 
@@ -66,6 +67,22 @@ Use it when you want help:
 Typical prompts:
 - `write a commit message for these changes`
 - `what commit style should we use?`
+
+### `youtube`
+
+Composable toolkit for fetching YouTube metadata, transcripts, and
+transcript-backed summaries.
+
+Use it when you want to:
+- fetch a YouTube video's metadata (title, duration, thumbnail, channel)
+- download a video's transcript
+- generate notes or a summary from a video
+
+Typical prompts:
+- `get metadata for this youtube video`
+- `summarize this youtube video`
+- `download the transcript of ...`
+- `take notes on ...`
 
 ## External Skills
 

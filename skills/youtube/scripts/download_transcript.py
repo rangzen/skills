@@ -102,7 +102,11 @@ def main(argv: list[str]) -> int:
         out_dir.mkdir(exist_ok=True)
 
     print(f"Fetching transcript for video {video_id} ({title or 'unknown title'}) ...")
-    transcript = YouTubeTranscriptApi().fetch(video_id)
+    try:
+        transcript = YouTubeTranscriptApi().fetch(video_id)
+    except Exception as exc:  # noqa: BLE001
+        print(f"Error: could not fetch transcript: {exc}", file=sys.stderr)
+        return 1
     content = format_transcript(transcript)
 
     out_file = out_dir / "transcript.txt"
