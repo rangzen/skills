@@ -40,7 +40,7 @@ from datetime import datetime
 from pathlib import Path
 
 import requests
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 OPENROUTER_CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -131,7 +131,7 @@ def call_openrouter(api_key: str, model: str, system_prompt: str, user_prompt: s
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
-        "X-Title": "youtube-notes-skill",
+        "X-Title": "youtube-skill",
     }
     payload = {
         "model": model,
@@ -173,7 +173,7 @@ def main(argv: list[str]) -> int:
     # (e.g. a project-level .env), then falls back to one next to this
     # script for a personal, skill-local key. load_dotenv never overrides
     # variables already set in the environment.
-    load_dotenv()
+    load_dotenv(find_dotenv(usecwd=True))
     load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
     api_key = os.environ.get("OPENROUTER_API_KEY")

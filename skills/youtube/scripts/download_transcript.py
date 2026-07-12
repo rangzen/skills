@@ -61,7 +61,7 @@ def fetch_video_title(video_id: str) -> str:
         f"?url=https://www.youtube.com/watch?v={video_id}&format=json"
     )
     try:
-        resp = requests.get(url, timeout=15, headers={"User-Agent": "youtube-notes-skill"})
+        resp = requests.get(url, timeout=15, headers={"User-Agent": "youtube-skill"})
         resp.raise_for_status()
         return resp.json().get("title", "")
     except Exception as exc:  # noqa: BLE001
@@ -90,11 +90,16 @@ def main(argv: list[str]) -> int:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    title = fetch_video_title(video_id)
-    slug = slugify(title)
-    dir_name = f"{video_id}-{slug}" if slug else video_id
-    out_dir = output_dir / dir_name
-    out_dir.mkdir(exist_ok=True)
+    existing = sorted(output_dir.glob(f"{video_id}-*"))
+    if existing and existing[0].is_dir():
+        out_dir = existing[0]
+        title = ""
+    else:
+        title = fetch_video_title(video_id)
+        slug = slugify(title)
+        dir_name = f"{video_id}-{slug}" if slug else video_id
+        out_dir = output_dir / dir_name
+        out_dir.mkdir(exist_ok=True)
 
     print(f"Fetching transcript for video {video_id} ({title or 'unknown title'}) ...")
     transcript = YouTubeTranscriptApi().fetch(video_id)
