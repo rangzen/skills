@@ -122,7 +122,7 @@ def main(argv: list[str]) -> int:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    existing = sorted(output_dir.glob(f"{video_id}-*"))
+    existing = sorted(output_dir.glob(f"{video_id}*"))
     if existing and existing[0].is_dir():
         out_dir = existing[0]
     else:
